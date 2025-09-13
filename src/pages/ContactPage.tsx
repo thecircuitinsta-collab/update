@@ -164,8 +164,17 @@ export const ContactPage: React.FC = () => {
             </div>
 
             {/* Map Placeholder */}
-            <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-              <p className="text-gray-500">Interactive Map Coming Soon</p>
+            <div className="bg-gray-200 rounded-lg h-64 overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.123456789!2d145.3456789!3d-38.0123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad61234567890ab%3A0x1234567890abcdef!2s8%20Thirlsmere%20Ct%2C%20Berwick%20VIC%203806%2C%20Australia!5e0!3m2!1sen!2sau!4v1234567890123!5m2!1sen!2sau"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Zentra Holdings Location"
+              />
             </div>
           </div>
 

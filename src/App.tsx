@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
 // Layout Components
@@ -27,10 +27,22 @@ import { AdminSlider } from './pages/admin/AdminSlider';
 import { AdminSettings } from './pages/admin/AdminSettings';
 import { AdminBookings } from './pages/admin/AdminBookings';
 
+// Component to handle scroll to top on route change
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 function App() {
   return (
     <Router>
       <div className="App">
+        <ScrollToTop />
         <Toaster position="top-right" />
         
         <Routes>
