@@ -193,10 +193,10 @@ export const authenticateAdmin = async (username: string, password: string) => {
         .select('*')
         .eq('username', username)
         .eq('password', password)
-        .single();
+        .limit(1);
 
-      if (data) {
-        return { success: true, user: data };
+      if (data && data.length > 0) {
+        return { success: true, user: data[0] };
       }
     }
     
